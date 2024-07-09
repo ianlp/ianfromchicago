@@ -77,9 +77,9 @@ const {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollTop > scrollThreshold) {
-      document.documentElement.classList.remove("theme-dark");
-    } else {
       document.documentElement.classList.add("theme-dark");
+    } else {
+      document.documentElement.classList.remove("theme-dark");
     }
   });
 </script>

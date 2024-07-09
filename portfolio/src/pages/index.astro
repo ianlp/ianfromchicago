@@ -31,7 +31,7 @@ const projects = (await getCollection("work"))
       <header class="hero">
         <div>
           <Hero
-            title="Hello, my name is Ian LP"
+            title="Hello, my name is Ian."
             tagline="I am a Creative Developer who is currently based in Chicago."
             align="start"
           />
@@ -121,6 +121,12 @@ const projects = (await getCollection("work"))
     margin-top: 1rem;
     max-width: 360px;
   }
+
+  @media (max-width: 767px) {
+    .hero .hero__cta {
+      text-align: center;
+    }
+  }
 </style>
 
 <style>
@@ -129,7 +135,6 @@ const projects = (await getCollection("work"))
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-top: 2rem;
   }
 
   .roles {

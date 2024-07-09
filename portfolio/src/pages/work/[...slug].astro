@@ -35,9 +35,9 @@ const { Content } = await entry.render();
           <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
           <Hero title={entry.data.title} align="start">
             <div class="details">
-              <div class="tags">
+              <!-- <div class="tags no-mobile">
                 {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-              </div>
+              </div> -->
               <p class="description">{entry.data.description}</p>
             </div>
           </Hero>
@@ -68,16 +68,16 @@ const { Content } = await entry.render();
 
 <style>
   .portfolio-image {
-    margin-bottom: 3rem;
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
     max-width: none;
+    margin-bottom: 1rem;
   }
 
   header {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--gray-800);
+    padding: 0 0 1px solid var(--gray-800);
+    margin-top: 2rem;
   }
 
   .back-link {
