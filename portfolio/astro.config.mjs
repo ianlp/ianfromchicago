@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
+
+import { defineConfig } from 'astro/config';
+
 export default defineConfig({
-    site: 'https://your-username.github.io'
+  site: 'https://www.ianfromchicago.com/',
+  // ... other configuration options ...
 });
