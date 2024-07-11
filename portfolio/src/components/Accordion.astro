@@ -1,0 +1,146 @@
+---
+// Accordion.astro
+interface Props {
+  accordionTitle: string;
+  accordionDetails: string;
+}
+
+const { accordionTitle, accordionDetails } = Astro.props as Props;
+---
+
+<div class="infoBox-accordian">
+  <button
+    class="infoBox-title accordion__button"
+    type="button"
+    aria-expanded="false"
+    aria-controls={`${accordionTitle}-content`}
+    id={`${accordionTitle}-button`}
+  >
+    <h4>{accordionTitle}</h4>
+    <div class="infoBox-desc">
+      <p>{accordionDetails}</p>
+    </div>
+  </button>
+
+  <div
+    id={`${accordionTitle}-content`}
+    aria-labelledby={`${accordionTitle}-button`}
+    class="infoBox-desc accordion__content hidden"
+  >
+    <p>{accordionDetails}</p>
+  </div>
+</div>
+
+<style>
+  .infoBox {
+    border-radius: 0.75rem;
+    background-color: var(--gray-999_40);
+    infobox-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .infoBox-accordian:first-of-type {
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
+  }
+
+  .infoBox-title {
+    border: none;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    background: none;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 40px 1em 0;
+  }
+  .infoBox-title h4 {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .infoBox-title::after {
+    content: "";
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMjkiIHZpZXdCb3g9IjAgMCAyOSAyOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9Ikdyb3VwIDU5MCI+CjxsaW5lIGlkPSJMaW5lIDEzIiB5MT0iMTQuNzUiIHgyPSIyOSIgeTI9IjE0Ljc1IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjAuNSIvPgo8bGluZSBpZD0iTGluZSAxNCIgeDE9IjE0Ljc1IiB5MT0iMjkiIHgyPSIxNC43NSIgeTI9IjEuMDkyNzhlLTA4IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjAuNSIvPgo8L2c+Cjwvc3ZnPgo=);
+    width: 29px;
+    height: 100%;
+    display: inline-block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+
+  .infoBox-title.active::after {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjkiIGhlaWdodD0iMSIgdmlld0JveD0iMCAwIDI5IDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGlkPSJHcm91cCA1ODkiPgogICAgPGxpbmUgaWQ9IkxpbmUgMTMiIHkxPSIwLjc1IiB4Mj0iMjkiIHkyPSIwLjc1IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjAuNSIvPgo8L2c+Cjwvc3ZnPgo=);
+  }
+
+  .infoBox p {
+    color: var(--gray-300);
+    font-size: 18px;
+  }
+
+  .theme-dark .infoBox-desc p {
+    color: var(--gray-100);
+    color: #fff;
+  }
+
+  .infoBox-desc {
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+  }
+
+  .infoBox-desc p {
+    font-size: var(--text-md);
+    line-height: calc(80 / 50);
+    max-width: 80%;
+  }
+
+  .infoBox-title.active .infoBox-desc {
+    max-height: 200px;
+    margin-top: 1.4rem;
+  }
+
+  @media (min-width: 50em) {
+    .infoBox {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.5rem;
+    }
+
+    .infoBox-title {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".accordion__button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.classList.remove("active");
+          }
+        });
+        button.classList.toggle("active");
+      });
+    });
+  });
+</script>

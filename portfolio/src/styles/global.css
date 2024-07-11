@@ -263,3 +263,17 @@ h5 {
 	}
 }
 
+.theme-dark .infoBox-desc p {
+    color: var(--gray-200);
+    color: #fff;
+  }
+
+  .theme-dark .infoBox-title::after {
+	filter: invert(100%);
+  }
+
+  .theme-dark .infoBox-title {
+    border-color: #808080 !important;
+  }
+
+ 

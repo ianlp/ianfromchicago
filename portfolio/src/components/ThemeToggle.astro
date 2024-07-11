@@ -91,4 +91,47 @@ import Icon from "./Icon.astro";
     }
   }
   customElements.define("theme-toggle", ThemeToggle);
+
+  //change when js-themechange in viewport
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeChangeElements = document.querySelectorAll(".js-themeChange");
+
+    if (themeChangeElements.length > 0) {
+      let isDarkMode = false; // Flag to track dark mode state
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // At least one element is visible in the viewport
+              if (!isDarkMode) {
+                document.documentElement.classList.add("theme-dark");
+                isDarkMode = true;
+              }
+            } else if (!anyElementIntersecting(entries)) {
+              // No elements are visible
+              if (isDarkMode) {
+                document.documentElement.classList.remove("theme-dark");
+                isDarkMode = false;
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.4,
+        }
+      );
+
+      themeChangeElements.forEach((element) => {
+        observer.observe(element);
+      });
+    }
+  });
+
+  function anyElementIntersecting(
+    entries: IntersectionObserverEntry[]
+  ): boolean {
+    return entries.some((entry) => entry.isIntersecting);
+  }
 </script>

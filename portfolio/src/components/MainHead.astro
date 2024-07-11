@@ -71,15 +71,36 @@ const {
   //     }, 1000);
   //   });
 
-  const scrollThreshold = 450;
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeChangeElement = document.querySelector(".js-themeChange");
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (themeChangeElement) {
+      let isDarkMode = false; // Flag to track dark mode state
 
-    if (scrollTop > scrollThreshold) {
-      document.documentElement.classList.add("theme-dark");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            if (!isDarkMode) {
+              document.documentElement.classList.add("theme-dark");
+              isDarkMode = true;
+            }
+          } else {
+            if (isDarkMode) {
+              document.documentElement.classList.remove("theme-dark");
+              isDarkMode = false;
+            }
+          }
+        },
+        {
+          threshold: 0.4,
+          // root: document.querySelector(".js-themeChange"),
+          // rootMargin: "300px 0px 200px 0px",
+        }
+      );
+
+      observer.observe(themeChangeElement);
     } else {
-      document.documentElement.classList.remove("theme-dark");
+      console.error("Theme change element not found.");
     }
   });
 </script>
