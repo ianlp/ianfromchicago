@@ -11,6 +11,7 @@ export const collections = {
 			portfolioImg: z.string(),
 			portfolioImgDetail: z.string(),
 			portfolioImg_alt: z.string().optional(),
+			portfolioImgSmall: z.string(),
 		}),
 	}),
 };
