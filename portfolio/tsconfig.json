@@ -9,7 +9,7 @@
     },
     "baseUrl": ".",
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "moduleResolution": "node"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/**/*.d.ts", "src/components/AccordionClient.tsx"]
