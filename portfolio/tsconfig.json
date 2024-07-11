@@ -1,16 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "types": ["astro/client"],
-    "allowJs": true,
-    "checkJs": false,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "baseUrl": ".",
-    "isolatedModules": true,
-    "noEmit": false,
-    "moduleResolution": "node"
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/**/*.d.ts", "src/components/AccordionClient.tsx"]
+  "extends": "astro/tsconfigs/strict"
+
 }
