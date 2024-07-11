@@ -1,9 +1,10 @@
 ---
 title: Quality Logo Products
 publishDate: 2020-03-04 00:00:00
-portfolioImg: /assets/work/cover-qlp.png
+portfolioImg: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/05e9705d-03c7-4c71-039e-f0238c661000/public
 portfolioImg_alt: portfolio
-portfolioImgDetail: /assets/work/collage.png
+portfolioImgDetail: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/fadfff66-78bf-4a92-4e08-6e544f73e700/public
+portfolioImgSmall: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/1481f8fa-ab5a-445c-2ae9-acc0f111c700/public
 
 description: |
   Senior Frontend Developer December 2016 – June 2024

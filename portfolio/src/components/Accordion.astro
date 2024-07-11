@@ -106,11 +106,24 @@ const { accordionTitle, accordionDetails } = Astro.props as Props;
     font-size: var(--text-md);
     line-height: calc(80 / 50);
     max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
   }
 
   .infoBox-title.active .infoBox-desc {
     max-height: 200px;
     margin-top: 1.4rem;
+    transition: margin-bottom 0.5s ease-in-out;
+    transition-delay: 0.5s;
+  }
+
+  .infoBox-title.active .infoBox-desc h4 {
+    margin-bottom: 1.4rem;
+    transition: margin-bottom 0.5s ease-in-out;
+    transition-delay: 0.5s;
+  }
+  .infoBox-title.active .infoBox-desc p {
+    opacity: 1;
   }
 
   @media (min-width: 50em) {

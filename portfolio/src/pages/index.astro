@@ -4,6 +4,10 @@ import { getCollection } from "astro:content";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+// Replace with your actual Cloudflare Image URL
+const imageSrc =
+  "https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/<image_id>/<variant_name>";
+
 // Component Imports
 import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
@@ -24,6 +28,10 @@ const projects = (await getCollection("work"))
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
+const smallProfileSrc =
+  "https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/19c97893-5fb3-475f-e869-bfe0d552c100/public";
+const largeProfileSrc =
+  "https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/be25af91-3b34-48cd-0e34-abb25a1d4500/public";
 ---
 
 <!-- <img src="/cdn-cgi/image/width=80,quality=75/uploads/avatar1.jpg" /> -->
@@ -42,12 +50,13 @@ const projects = (await getCollection("work"))
             <Icon icon="paper-plane-tilt" size="1.2em" />
           </CallToAction>
         </div>
-
-        <Image
+        <img
           alt="Ian in Berlin"
           width="480"
           height="620"
-          src="/assets/portrait2.png"
+          src={smallProfileSrc}
+          srcset={`${smallProfileSrc} 480w, ${largeProfileSrc} 1024w`}
+          sizes="(max-width: 500px) 100vw, 1024px"
         />
       </header>
 
@@ -197,7 +206,8 @@ const projects = (await getCollection("work"))
     top: 0;
     transform: translateY(-75%) translateX(-50%);
     background:
-      url("/assets/backgrounds/noise.png") top center/220px repeat,
+      url("https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/e83f0990-8108-45e9-374b-4558085c8300/public")
+        top center/220px repeat,
       var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
       var(--gray-999);
     background-blend-mode: overlay, normal, normal, normal;

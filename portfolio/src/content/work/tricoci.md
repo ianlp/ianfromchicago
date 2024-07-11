@@ -1,9 +1,10 @@
 ---
 title: Mario Tricoci
 publishDate: 2019-12-01 00:00:00
-portfolioImg: /assets/work/cover-tricoci.png
+portfolioImg: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/9b78dbf7-e217-44f7-8431-ab489b981500/public
 portfolioImg_alt: Mario make me a model
-portfolioImgDetail: /assets/work/collagetricoci.png
+portfolioImgDetail: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/a3544be0-125f-40a7-7b25-03d8b684dc00/public
+portfolioImgSmall: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/ca055290-14c4-4f23-6a88-10f5d0e43400/public
 description: |
   Mario Tricoci Website Development
 tags:

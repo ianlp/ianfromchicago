@@ -1,9 +1,10 @@
 ---
 title: REDKEN
 publishDate: 2019-10-02 00:00:00
-portfolioImg: /assets/work/cover-redken.png
+portfolioImg: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/7d243114-452d-4bd2-f923-bab0bc041800/public
 portfolioImg_alt: Soft pink and baby blue water ripples together in a subtle texture.
-portfolioImgDetail: /assets/work/collagelredken.png
+portfolioImgSmall: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/e78d3356-05d2-41d5-7ed4-ecc6e32fdb00/public
+portfolioImgDetail: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/155bfa05-33e0-45a7-95a2-e1b24f75fc00/public
 description: |
   As a freelance Front-End Developer, I was hired by Elevate to deliver a refreshed digital experience for Redken, a leading professional haircare brand. My primary focus was on crafting the HTML, CSS, and JavaScript foundations for a new, dynamic website template and a series of impactful landing pages.
 tags:

@@ -1,9 +1,10 @@
 ---
 title: Hanes
 publishDate: 2020-03-02 00:00:00
-portfolioImg: /assets/work/cover-xtemp.png
+portfolioImg: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/710c265b-f858-46a8-a9a1-7b415a24b700/public
 portfolioImg_alt: Hanes Model
-portfolioImgDetail: /assets/work/collagehanes.png
+portfolioImgSmall: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/602e51c2-6c1f-4f8f-9812-fc4bd85b3700/public
+portfolioImgDetail: https://imagedelivery.net/D3fdMbPX-42-mr9l5o7JQg/1160d1ae-8e87-47ac-c619-17d1cce1dd00/public
 description: |
   As a Front-End Developer at Elevate, I played a pivotal role in crafting the digital face of Hanesbrands Inc. My responsibilities spanned a wide spectrum of front-end development, web accessibility, and client communication.
 tags:
